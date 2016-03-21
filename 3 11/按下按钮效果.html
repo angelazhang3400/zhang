@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0;
+				text-decoration:none;/*-超链接默认下划线-*/
+			}
+			a{
+				width:150px;
+				height:70px;
+				background:green;
+				position:absolute;
+				left:50px;
+				top:20px;
+				text-align: center;
+				font-size:30px;
+				line-height: 70px;
+				color:#000;
+				font-family: "微软雅黑";
+				font-weight:bold;
+				box-shadow:0 10px 5px #000,inset 0 0 15px #fff;
+				text-shadow:2px 2px 5px #fff;
+				-webkit-transition:.2s all ease;/*-chrome opera-*/
+				-moz-transition:.2s all ease;/*-firefox-*/
+				-o-transition:.2s all ease;/*-opera-*/
+				-ms-transition:.2s all ease;/*-IE-*/
+				transition:.2s all ease;
+			}
+			a:hover{
+				box-shadow:0 10px 5px #000,inset 0 0 30px #fff;
+			}
+			a:active{
+				box-shadow:0 0 0 #000,inset 0 0 30px #fff;
+				text-shadow:0 0 0 #000;
+				top:20px;
+			}</style>
+	</head>
+	<body>
+		<a href="javascript:;">按钮</a>
+	</body>
+</html>

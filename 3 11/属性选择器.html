@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			li{
+				background:#ccc;
+				margin-bottom:10px;
+			}
+			li[tab]{background:red;}
+			/*只有On这个值的*/
+			li[tab=on]{background:yellow;}
+			/*有tab名有on这个值的*/
+			li[tab~=on]{background:pink;}
+			/*只要包含active的*/
+			li[tab*=active]{background:blue;}
+			/*以on开头的*/
+			li[tab^=on]{background:yellow;}
+			/*以active结尾*/
+			li[tab$=active]{background:purple;}
+			/*以active开头 且只有这个值的*/
+			li[tab|=active]{background:olive;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li tab="on"></li>
+			<li tab="active2 on1"></li>
+			<li tab="active"></li>
+			<li tab="on"></li>
+			<li tab="show on"></li>
+			<li tab="on1 active"></li>
+			<li tab="on"></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0;
+				list-style:none;
+			}
+			body{
+				background:darkred;
+			}
+			ul{				
+				margin-top:400px;	
+				/*position:relative;*/		
+			}
+			li{
+				position:relative;
+				top:0;
+				left:0;
+				margin-left:20px;
+				width:200px;
+				height:200px;
+				float:left;
+				
+			}
+			span{
+				width:200px;
+				height:200px;
+				background:url(image/img_01.jpg) no-repeat;
+				float:left;
+				margin:0 20px 0 0;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:9;
+				-webkit-transition:1s all ease;
+			}
+		 	.box p{
+				position:absolute;
+				top:0px;
+				left:3px;
+				background:url(image/cd.png) no-repeat;
+				width:194px;
+				height:194px;
+				/*margin-top:-20px;*/
+				z-index:5;
+				-webkit-transition:1s all ease;
+			}
+			li:hover{
+				padding-bottom:20px;
+			}			
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var oBox=document.getElementById('box');
+				var aLi=document.getElementsByTagName('li');				
+				var aSpan=document.getElementsByTagName('span');
+				var aRound=document.getElementsByTagName('p');				
+				
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].index=i;
+					aLi[i].onmouseover=function(){
+						aRound[this.index].style.WebkitTransform='rotate(-360deg)';
+						aRound[this.index].style.translateY='-60px';
+						aSpan[this.index].style.translateY='20px';
+					};
+					aLi[i].onmouseout=function(){
+						aRound[this.index].style.translateY='0px';
+						aRound[this.index].style.WebkitTransform='';
+						aSpan[this.index].style.translateY='0px';
+					};
+				}
+			},false);
+		</script>
+	</head>
+	<body>
+		<div class="box" id="box">
+			<ul>
+				<li>
+					<span id=""></span>
+					<p></p>
+				</li>
+				<li>
+					<span id=""></span>
+					<p>
+						
+					</p>
+				</li>
+				<li>
+					<span id=""></span>
+					<p>
+						
+					</p>
+				</li>
+				<li>
+					<span id=""></span>
+					<p>
+						
+					</p>
+				</li>
+				<li>
+					<span id=""></span>
+					<p>
+						
+					</p>
+				</li>
+				<li>
+					<span id=""></span>
+					<p>
+						
+					</p>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

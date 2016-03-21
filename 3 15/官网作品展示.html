@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0; list-style:none;
+			}
+			ul{
+				width:300px;
+				height:200px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-top:-100px;
+				margin-left:-150px;
+				perspective:800px;/*透视效果*/
+			}
+			li{
+				width:300px;
+				height:200px;
+				position:absolute;
+				left:0;
+				top:0;
+				text-align: center;
+				line-height: 200px;
+				font-size:50px;
+				background:lightseagreen;
+				opacity: 0;
+				border:1px solid #000; 
+				-webkit-transition:.5s all ease;
+			}
+			li.cur{
+				opacity:1;
+				z-index: 9;
+			}
+			li.r1{
+				opacity: 0.8;
+				z-index: 8;
+				-webkit-transform:translateX(200px) rotateY(-60deg);
+			}
+			li.r2{
+				opacity: 0;
+				z-index: 7;
+				-webkit-transform:translateX(250px) rotateY(-70deg);
+			}
+			li.l1{
+				opacity: 0.8;
+				z-index: 8;
+				-webkit-transform:translateX(-200px) rotateY(60deg);
+			}
+			li.r2{
+				opacity: 0;
+				z-index: 7;
+				-webkit-transform:translateX(-250px) rotateY(70deg);
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var oPrev=document.querySelector('.prev');
+				var oNext=document.querySelector('.next');
+				var aLi=document.querySelectorAll('ul li');
+				aClass=[];
+				for(var i=0;i<aLi.length;i++){
+					aClass.push(aLi[i].className);
+				}
+				oNext.onclick=function(){
+					aClass.unshift(aClass.pop());
+					for(var i=0;i<aLi.length;i++){
+						aLi[i].className=aClass[i];
+					}
+				};
+				oPrev.onclick=function(){
+					aClass.push(aClass.shift());
+					for(var i=0;i<aLi.length;i++){
+						aLi[i].className=aClass[i];
+					}
+				};
+			},false)
+		</script>
+	</head>
+	<body>
+		<a href="javascript:;" class="prev">←</a>
+		<a href="javascript:;" class="next">→</a>
+		<ul>
+			<li class="cur">1</li>
+			<li class="r1">2</li>
+			<li class="r2">3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li class="l2">10</li>
+			<li class="l1">11</li>
+		</ul>
+	</body>
+</html>

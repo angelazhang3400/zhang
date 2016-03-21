@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0;
+			}
+			div{
+				width:300px;
+				height:160px;
+				background:#ccc;
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-left:-150px;
+				margin-top:-80px;
+				text-align: center;
+				line-height: 40px;
+				-webkit-transform:scale(5,4);
+				opacity:0;	
+				display: none;			
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var oBtn=document.getElementById('btn');
+				var oBox=document.getElementById('box');
+				var oC=document.getElementById('close');
+				oBtn.onclick=function(){
+					oBox.style.display='block';
+					oBox.style.WebkitTransition='1s all ease';
+					setTimeout(function(){
+						oBox.style.opacity=1;
+						oBox.style.WebkitTransform='scale(1,1)';
+					},1)
+				};
+				oC.onclick=function(){
+					oBox.style.opacity=0;
+					oBox.style.WebkitTransform='scale(5,4)';
+					function fnEnd(){
+						oBox.style.display='none';
+						oBox.removeEventListener('transitionend',fnEnd,false);
+					}
+					oBox.addEventListener('transitionend',fnEnd,false);
+				};
+			},false)
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="登陆" />
+		<div id="box">
+			用户名：<input type="text" /><br />
+			密&nbsp;码：<input type="password" /><br />
+			<input type="button" value="登陆" />
+			<a href="javascript:;">注册</a>
+			<a href="javascript:;" id="close">X</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0; list-style:none;
+			}
+			ul{
+				position:absolute;
+				left:50%;
+				top:50%;
+				margin-left:-100px;
+				margin-top:-100px;
+				width:200px;
+				height:200px;
+				-webkit-transition:1s all ease;
+				-webkit-transform-style:preserve-3d;
+				-webkit-transform:perspective(800px) rotateY(0deg) rotateX(0deg);
+			}
+			li{
+				width:200px;
+				height:200px;
+				position:absolute;
+				left:0;
+				top:0;
+				/*margin-left:-100px;
+				margin-top:-100px;*/
+				text-align: center;
+				line-height: 200px;
+				opacity:0.5;
+				font-size:50px;
+			}
+			li.front{
+				background:red;
+				-webkit-transform:translateZ(100px);
+			}
+			li.back{
+				background:pink;
+				-webkit-transform:translateZ(-100px);
+			}
+			li.left{
+				background:cornflowerblue;
+				-webkit-transform:translateX(-100px) rotateY(-90deg);
+			}
+			li.right{
+				background:mediumspringgreen;
+				-webkit-transform:translateX(100px) rotateY(90deg);
+			}
+			li.top{
+				background:orange;
+				-webkit-transform:translateY(-100px) rotateX(-90deg);
+			}
+			li.bottom{
+				background:orangered;
+				-webkit-transform:translateY(100px) rotateX(90deg);
+			}
+			ul:active{
+				-webkit-transform:perspective(800px) rotateY(200deg) rotateX(35deg);
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="front">正</li>
+			<li class="back">反</li>
+			<li class="left">左</li>
+			<li class="right">右</li>
+			<li class="top">上</li>
+			<li class="bottom">下</li>
+		</ul>
+	</body>
+</html>

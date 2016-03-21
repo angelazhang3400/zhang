@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:200px;
+				height:200px;
+				background:#ccc;
+				margin:100px auto;				
+			}
+		</style>
+		<script>
+			function setStyle(obj,name,value){
+				obj.style['Webkit'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+				obj.style['Moz'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+				obj.style['O'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+				obj.style['ms'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+				obj.style[name]=value;
+			}
+			document.addEventListener('DOMContentLoaded',function(){
+				var oDiv=document.querySelector('div');
+				setStyle(oDiv,'transition','1s all ease');
+				oDiv.onclick=function(){
+					oDiv.style.width='400px';
+					oDiv.style.height='400px';
+					oDiv.style.background='red';
+				};
+			});
+		</script>
+	</head>
+	<body>
+		<div id="">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0;list-style:none;
+			}
+			ul{
+				margin-left:10px;
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				var aEle=document.querySelectorAll('#box ul .on input');
+				for(var i=0;i<aEle.length;i++){
+					aEle[i].style.background='red';
+				}
+//				var oEle=document.querySelector('#box ul .on input');
+//					oEle.style.background='pink';
+			},false);
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li><input type="button" value="111" /></li>
+				<li class="on"><input type="text" value="aaa" /></li>
+				<li><input type="button" value="222" /></li>
+				<li class="on"><input type="text" value="bbb" /></li>				
+			</ul>
+		</div>
+	</body>
+</html>

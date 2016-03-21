@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width:650px;
+				height:200px;
+				background:#000;
+				margin:200px auto;
+			}
+			@keyframes test{
+				form{background-position:-570px 0;}
+				to{background-position:50px 0;}
+			}
+			p{
+				font-size:60px;
+				text-align: center;
+				font-family: "微软雅黑";
+				line-height: 200px;
+				-webkit-transition:1s all ease;
+				background:-webkit-linear-gradient(-45deg,#999 60px,#fff 80px,#999 100px);
+				-webkit-background-clip:text; 
+				color:rgba(0,0,0,0);
+				background-position:-570px 0;
+				animation-name:test;
+				animation-duration:.5s;
+				animation-timing-function:linear;
+				animation-iteration-count:infinite;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<p>移动滑块解锁</p>
+		</div>
+	</body>
+</html>

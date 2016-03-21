@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0; padding:0;
+			}
+			div{
+				width:200px;
+				height:400px;
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-left:-100px;
+				margin-top:-200px;
+				-webkit-transform-style:preserve-3d;
+				-webkit-transition:1s all ease;
+				-webkit-transform:perspective(800px) rotateY(0deg) rotateX(0deg);
+			}
+			span{
+				width:200px;
+				height:400px;
+				position:absolute;
+				left:0;
+				top:0;
+				text-align: center;
+				line-height: 400px;
+				font-size:50px;
+			}
+			div .span1{
+				background:red;
+				-webkit-transform:translateZ(10px);
+			}
+			div .span2{
+				background:pink;
+				-webkit-transform:translateZ(-10px) scale(-1,1);
+			}
+			div:active{
+				-webkit-transform:perspective(800px) rotateY(-180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<span class="span1">front</span>
+			<span class="span2">back</span>
+		</div>
+	</body>
+</html>
